@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import _trim from 'lodash/trim';
 import { setInStorage, getFromStorage } from 'utils/localstorage';
 import Config from 'config';
 import AppComponent from './app.js';
@@ -61,7 +62,7 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  forcedWinner: Config.forcedWinner || null,
+  forcedWinner: _trim(Config.forcedWinner) || null,
 }
 
 export default App;

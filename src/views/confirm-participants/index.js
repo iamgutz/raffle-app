@@ -10,7 +10,11 @@ const Component = props => {
 
   return (
     <Fragment>
-      <Title>Confirmar Participantes</Title>
+      <Title>
+        {participants &&
+          `Confirmar ${participants.length} Participante${participants.length > 1 ? 's' : ''}`
+        }
+      </Title>
       <List>
         {participants && participants.map(p => (
           <Item key={JSON.stringify(p)}>{p}</Item>

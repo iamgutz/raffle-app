@@ -18,13 +18,7 @@ const Component = props => {
   return (
     <Fragment>
       <Title>
-        {participants && `${participants.length} `}
-        {!participants &&
-          'Agregar Participantes'
-        }
-        {participants &&
-          `Participante${participants.length > 1 ? 's' : ''}`
-        }
+        Agregar Participantes
       </Title>
       <TextArea
         onInput={({ target: { value } }) => onTextareaChange(value)}

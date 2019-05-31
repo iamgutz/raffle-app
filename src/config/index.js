@@ -1,3 +1,3 @@
 export default {
-  forcedWinner: 'Kimberly Venegas Vargas',
+  forcedWinner: 'Kimberly Venegas Vargas ',
 };
