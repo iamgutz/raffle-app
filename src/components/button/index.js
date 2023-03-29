@@ -6,22 +6,23 @@ const Button = styled.button `
   border: none;
   font-family: 'PT Sans', sans-serif;
   font-size: 1rem;
+  font-weight: bold;
   padding: 1rem;
   text-transform: uppercase;
   cursor: pointer;
   background: transparent;
   color: ${ROTI};
-  border: 2px solid ${ROTI};
+  border: 3px solid ${ROTI};
   ${({ primary }) =>  primary && `
     color: ${ROSE};
-    border: 2px solid ${ROSE};
+    border-color: ${ROSE};
   `}
   ${({ secondary }) =>  secondary && `
   color: ${WHITE};
-  border: 2px solid ${WHITE};
+  border-color: ${WHITE};
   `}
   ${({ disabled }) => disabled && `
-    border: 2px solid ${SILVER_CHALICE};
+    border-color: ${SILVER_CHALICE};
     color: ${DUSTY_GRAY};
     opacity: 0.7;
     cursor: not-allowed;
