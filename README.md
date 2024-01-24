@@ -38,10 +38,15 @@ Set a forced winner by changing the forcedWinner value.
 Adjust the visual appearance of the app with the following theme options:
 
 -`appLogoImgSrc`: Path to the app logo image
+
 -`bgColor`: Background color
+
 -`buttonColor`: Button color
+
 -`listItemBgColorEven`: Background color for list items (even)
+
 -`textColor`: Text color
+
 
 ### Text Settings
 Modify the text content displayed in the app:
