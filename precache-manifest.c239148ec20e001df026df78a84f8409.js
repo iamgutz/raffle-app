@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a08efdf358d012b69c7a576a9012eee7",
+    "revision": "36fb822342432a0ba9d67929cb0eabf0",
     "url": "/raffle-app/index.html"
   },
   {
-    "revision": "386ad8d312cb891b82c9",
+    "revision": "05c3746cd5047e8c74b3",
     "url": "/raffle-app/static/css/main.52128000.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/raffle-app/static/js/2.32025aad.chunk.js"
   },
   {
-    "revision": "386ad8d312cb891b82c9",
-    "url": "/raffle-app/static/js/main.52fc77ed.chunk.js"
+    "revision": "05c3746cd5047e8c74b3",
+    "url": "/raffle-app/static/js/main.60f79dea.chunk.js"
   },
   {
     "revision": "d74387aa6ba3b5005ec8",
