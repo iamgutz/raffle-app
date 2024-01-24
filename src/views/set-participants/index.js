@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import _isEmpty from 'lodash/isEmpty';
 import TextArea from 'components/text-area';
 import Button from 'components/button';
-import { Row } from 'components/layout';
+import { Row, Container } from 'components/layout';
 import { Title } from 'components/typography';
+import Config from 'config';
 
 const Component = props => {
   const {
@@ -16,10 +17,11 @@ const Component = props => {
   } = props;
 
   return (
-    <Fragment>
+    <Container>
       <Title>
-        Agregar Participantes
+        {Config.text.addParticipantsTitle}
       </Title>
+
       <TextArea
         onInput={({ target: { value } }) => onTextareaChange(value)}
         defaultValue={participants && participants.join('\n')}
@@ -29,17 +31,17 @@ const Component = props => {
           secondary
           onClick={() => onChangeView(previousView)}
         >
-          Cancelar
+          {Config.text.cancelButton}
         </Button>
         <Button
           primary
           onClick={() => onChangeView(nextView)}
           disabled={_isEmpty(participants)}
         >
-          Continuar
+          {Config.text.continueButton}
         </Button>
       </Row>
-    </Fragment>
+    </Container>
   );
 };
 

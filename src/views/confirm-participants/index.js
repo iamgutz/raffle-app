@@ -1,20 +1,23 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/button';
 import { List, Item } from 'components/list';
-import { Row } from 'components/layout';
+import { Row, Container } from 'components/layout';
 import { Title } from 'components/typography';
+import Config from 'config';
 
 const Component = props => {
   const { onChangeView, previousView, nextView, participants } = props;
 
   return (
-    <Fragment>
-      <Title>
-        {participants &&
-          `Confirmar ${participants.length} Participante${participants.length > 1 ? 's' : ''}`
-        }
-      </Title>
+    <Container>
+      {participants && (
+        <>
+          <Title>
+            {Config.text.confirmTitle}
+          </Title>
+        </>
+      )}
       <List>
         {participants && participants.map(p => (
           <Item key={JSON.stringify(p)}>{p}</Item>
@@ -26,16 +29,16 @@ const Component = props => {
           secondary
           onClick={() => onChangeView(previousView)}
         >
-          Atras
+          {Config.text.backButton}
         </Button>
         <Button
           primary
           onClick={() => onChangeView(nextView)}
         >
-          Confirmar
+          {Config.text.confirmButton}
         </Button>
       </Row>
-    </Fragment>
+    </Container>
   );
 };
 

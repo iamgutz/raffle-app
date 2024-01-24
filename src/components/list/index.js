@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Config from 'config';
 
 export const List = styled.ul`
   list-style: none;
@@ -7,12 +8,12 @@ export const List = styled.ul`
   margin: 0;
   padding: 1rem 0;
   & > li {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid ${Config.theme.listItemBgColorEven};
     &:last-child {
       border-bottom: none;
     }
     &:nth-child(even) {
-      background: #222;
+      background: ${Config.theme.listItemBgColorEven};
     }
   }
 `;

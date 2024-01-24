@@ -6,6 +6,7 @@ import { SuperTitle, Headline, Title } from 'components/typography';
 import AppLogo from 'components/app-logo';
 import { clearStorage } from 'utils/localstorage';
 import { Podium } from './styles';
+import Config from 'config';
 
 class Winner extends PureComponent {
   handleFinish = () => {
@@ -22,16 +23,16 @@ class Winner extends PureComponent {
 
     return (
       <Fragment>
+        <AppLogo small />
         <Podium>
-          <Title>Muchas Felicidades!</Title>
-          <SuperTitle>Ganador</SuperTitle>
-          <AppLogo small />
+          <Title>{Config.text.congratulationsTitle}</Title>
           <Headline>{selectedWinner}</Headline>
+          <SuperTitle>{Config.text.congratulationsSuperTitle}</SuperTitle>
           <Button
             primary
             onClick={() => this.handleFinish()}
           >
-            Empezar de Nuevo
+            {Config.text.startOverButton}
           </Button>
         </Podium>
         <Confetti

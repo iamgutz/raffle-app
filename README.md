@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Raffle App
 
-## Available Scripts
+Welcome to the Raffle App! This application allows you to conduct raffles by inputting participant names and randomly selecting a winner. This README provides instructions on how to clone, install, and configure the app.
 
-In the project directory, you can run:
+## Getting Started
+### Prerequisites
+Node.js and npm installed on your machine
 
-### `npm start`
+### Clone the Repository
+```bash
+git clone https://github.com/your-username/raffle-app.git
+cd raffle-app
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install Dependencies
+```bash
+npm install
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Running the App
+To start the app, use the following command:
+```bash
+npm run start
+```
+Visit http://localhost:3000 in your browser to access the Raffle App.
 
-### `npm test`
+## Configuration
+The app comes with a configuration file located at **src/config/index.js**. You can customize the following settings:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Forced Winner
+Set a forced winner by changing the forcedWinner value.
 
-### `npm run build`
+### Theme Settings
+Adjust the visual appearance of the app with the following theme options:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`appLogoImgSrc`: Path to the app logo image
+`bgColor`: Background color
+`buttonColor`: Button color
+`listItemBgColorEven`: Background color for list items (even)
+`textColor`: Text color
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Text Settings
+Modify the text content displayed in the app:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Various titles, button labels, and messages are customizable.
 
-### `npm run eject`
+## Usage
+1. Configure settings in the config file.
+2. Start the app
+3. Access the app in your browser.
+4. Add participants.
+5. Conduct the raffle.
+6. View the winner.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+License
+This project is licensed under the MIT License.

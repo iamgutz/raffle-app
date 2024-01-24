@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { ROSE, WHITE, ROTI, SILVER_CHALICE, DUSTY_GRAY } from 'style/colors';
+import Config from 'config';
 
 const Button = styled.button `
   border: none;
@@ -11,32 +11,13 @@ const Button = styled.button `
   text-transform: uppercase;
   cursor: pointer;
   background: transparent;
-  color: ${ROTI};
-  border: 3px solid ${ROTI};
-  ${({ primary }) =>  primary && `
-    color: ${ROSE};
-    border-color: ${ROSE};
-  `}
-  ${({ secondary }) =>  secondary && `
-  color: ${WHITE};
-  border-color: ${WHITE};
-  `}
-  ${({ disabled }) => disabled && `
-    border-color: ${SILVER_CHALICE};
-    color: ${DUSTY_GRAY};
-    opacity: 0.7;
-    cursor: not-allowed;
-  `}
+  color: ${Config.theme.buttonColor};
+  border: 3px solid ${Config.theme.buttonColor};
 `;
 
 Button.propTypes = {
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  primary: true,
-  secondary: false,
 };
 
 export default Button;

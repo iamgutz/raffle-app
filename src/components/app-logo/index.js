@@ -1,9 +1,9 @@
 import React from 'react';
-import brandLogo from '../svg/brand-logo.svg';
-import { AppLogoSVG } from './styles';
+import { AppLogoImg } from './styles';
+import Config from 'config';
 
 const AppLogo = props => (
-  <AppLogoSVG src={brandLogo} {...props} />
+  <AppLogoImg src={Config.theme.appLogoImgSrc} {...props} />
 );
 
 export default AppLogo;

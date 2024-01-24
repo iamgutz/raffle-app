@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AppLogoSVG = styled.img`
+export const AppLogoImg = styled.img`
   width: 20rem;
   ${({ xlarge }) => xlarge && `
     width: 40rem;
