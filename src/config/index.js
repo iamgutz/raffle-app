@@ -1,7 +1,7 @@
 export default {
   forcedWinner: 'John Doe',
   theme: {
-    appLogoImgSrc: '/images/raffle-logo.jpg',
+    appLogoImgSrc: `${process.env.PUBLIC_URL}/images/raffle-logo.jpg`,
     bgColor: '#F7F7F7',
     buttonColor: '#FF070C',
     listItemBgColorEven: '#E7EDED',
