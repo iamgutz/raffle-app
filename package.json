@@ -1,5 +1,10 @@
 {
   "name": "Raffle-App",
+  "homepage": "https://iamgutz.github.io/raffle-app",
+  "author": {
+    "name": "Michael Gutierrez",
+    "url": "https://github.com/iamgutz"
+  },
   "description": "React App Prototype for raffling",
   "version": "0.1.0",
   "private": true,
