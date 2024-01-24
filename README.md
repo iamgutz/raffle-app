@@ -2,6 +2,10 @@
 
 Welcome to the Raffle App! This application allows you to conduct raffles by inputting participant names and randomly selecting a winner. This README provides instructions on how to clone, install, and configure the app.
 
+## Live Demo
+
+Visit the live demo [here](https://iamgutz.github.io/raffle-app/).
+
 ## Getting Started
 ### Prerequisites
 Node.js and npm installed on your machine
