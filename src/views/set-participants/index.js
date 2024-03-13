@@ -15,6 +15,7 @@ const SetParticipants = props => {
     return (
         <Container>
             <Title>{Config.text.addParticipantsTitle}</Title>
+            <p style={{ fontSize: '1rem' }}>(Enter a name per line)</p>
 
             <TextArea
                 onInput={({ target: { value } }) => onTextareaChange(value)}
