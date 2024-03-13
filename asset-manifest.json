@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/raffle-app/static/css/main.52128000.chunk.css",
-    "main.js": "/raffle-app/static/js/main.60f79dea.chunk.js",
-    "main.js.map": "/raffle-app/static/js/main.60f79dea.chunk.js.map",
+    "main.js": "/raffle-app/static/js/main.f93e1b65.chunk.js",
+    "main.js.map": "/raffle-app/static/js/main.f93e1b65.chunk.js.map",
     "runtime~main.js": "/raffle-app/static/js/runtime~main.1264bd6d.js",
     "runtime~main.js.map": "/raffle-app/static/js/runtime~main.1264bd6d.js.map",
-    "static/js/2.32025aad.chunk.js": "/raffle-app/static/js/2.32025aad.chunk.js",
-    "static/js/2.32025aad.chunk.js.map": "/raffle-app/static/js/2.32025aad.chunk.js.map",
+    "static/js/2.d80c4cbe.chunk.js": "/raffle-app/static/js/2.d80c4cbe.chunk.js",
+    "static/js/2.d80c4cbe.chunk.js.map": "/raffle-app/static/js/2.d80c4cbe.chunk.js.map",
     "index.html": "/raffle-app/index.html",
-    "precache-manifest.c239148ec20e001df026df78a84f8409.js": "/raffle-app/precache-manifest.c239148ec20e001df026df78a84f8409.js",
+    "precache-manifest.88a7da3488b04510a0779b2e74e7222d.js": "/raffle-app/precache-manifest.88a7da3488b04510a0779b2e74e7222d.js",
     "service-worker.js": "/raffle-app/service-worker.js",
     "static/css/main.52128000.chunk.css.map": "/raffle-app/static/css/main.52128000.chunk.css.map",
     "static/media/shuffle-spinner.svg": "/raffle-app/static/media/shuffle-spinner.9c057550.svg"
