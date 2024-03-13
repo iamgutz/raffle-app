@@ -4,24 +4,25 @@ import Button from 'components/button';
 import AppLogo from 'components/app-logo';
 import { SubTitle } from 'components/typography';
 import Config from 'config';
+import { useAppContext } from '../../App/context';
 
-const Component = props => {
-  const { onChangeView } = props;
-  return (
-    <Fragment>
-      <AppLogo/>
-      <SubTitle><strong>{Config.text.slogan}</strong></SubTitle>
-      <Button
-        onClick={() => onChangeView('setParticipants')}
-      >
-        {Config.text.enterButton}
-      </Button>
-    </Fragment>
-  );
+const Intro = props => {
+    const { onChangeView } = useAppContext();
+    return (
+        <Fragment>
+            <AppLogo />
+            <SubTitle>
+                <strong>{Config.text.slogan}</strong>
+            </SubTitle>
+            <Button onClick={() => onChangeView('setParticipants')}>
+                {Config.text.enterButton}
+            </Button>
+        </Fragment>
+    );
 };
 
-Component.propTypes = {
-  onChangeView: PropTypes.func.isRequired,
-}
+Intro.propTypes = {
+    onChangeView: PropTypes.func.isRequired,
+};
 
-export default Component;
+export default Intro;

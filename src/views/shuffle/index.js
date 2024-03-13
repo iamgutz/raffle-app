@@ -1,92 +1,116 @@
-import React, { PureComponent } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import _shuffle from 'lodash/shuffle';
 import _debounce from 'lodash/debounce';
-import Component from './component';
+import _trim from 'lodash/trim';
+import Config from 'config';
+import { Row, Container } from 'components/layout';
+import Button from 'components/button';
+import { Title, P } from 'components/typography';
+import ImgSVG from 'components/svg';
+import shuffleSpinner from '../../components/svg/shuffle-spinner.svg';
+import { useAppContext } from '../../App/context';
+import { getRandomTimeout } from './helpers';
 
-class Shuffle extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shuffledParticipants: _shuffle(props.participants),
-      selected: null,
-    }
-    this.randomTimeout = null;
-    this.shuffleInterval = null;
-    this.showWinnerTimeout = null;
-    this.debouncedOnSelectWinner = _debounce(props.onSelectedWinner, 100);
-  }
+const forcedWinner = _trim(Config.forcedWinner) || null;
+const pickingWinnerDuration = getRandomTimeout() * 1000;
 
-  setSelected = (index) => {
-    const { shuffledParticipants } = this.state;
-    const selected = shuffledParticipants[index];
-
-    this.setState({
-      selected,
-    }, () => {
-      this.debouncedOnSelectWinner(selected);
-    });
-  }
-
-  componentDidMount() {
-    const { getRandomTimeout, forcedWinner, onChangeView, nextView } = this.props;
-    const { shuffledParticipants } = this.state;
-    const _this = this;
-    const timeout = getRandomTimeout() * 1000;
-    this.randomTimeout = setTimeout(function() {
-      clearInterval(_this.shuffleInterval);
-      if (forcedWinner) {
-        const finalWinner = shuffledParticipants.indexOf(forcedWinner);
-        if (finalWinner >= 0) {
-          _this.setSelected(finalWinner);
-        }
-      }
-      _this.showWinnerTimeout = setTimeout(function() {
-        onChangeView(nextView);
-      }, 500);
-    }, timeout);
-    this.shuffleInterval = setInterval(function() {
-      const randomParticipant = Math.floor(Math.random() * shuffledParticipants.length);
-      _this.setSelected(randomParticipant);
-    }, 150);
-  }
-
-  componentWillUnmount() {
-    this.clearState();
-    clearTimeout(this.randomTimeout);
-    clearTimeout(this.showWinnerTimeout);
-    clearInterval(this.shuffleInterval);
-  }
-
-  clearState = () => {
-    this.setState({});
-  }
-
-  render() {
-    const { shuffledParticipants, selected } = this.state;
-    return (
-      <Component
-        {...this.props}
-        selected={selected}
-        participants={shuffledParticipants}
-      />
+const Shuffle = ({ nextView, previousView }) => {
+    const { participants, onSelectedWinner, onChangeView } = useAppContext();
+    const [winnerName, setWinnerName] = useState(null);
+    const debouncedOnSelectWinner = _debounce(onSelectedWinner, 100);
+    const shuffledParticipants = useMemo(() => _shuffle(participants), [participants]);
+    const randomTimeout = useRef(null);
+    const shuffleInterval = useRef(null);
+    const winnerTimeout = useRef(null);
+    const setSelected = useCallback(
+        index => {
+            const selected = shuffledParticipants[index];
+            setWinnerName(selected);
+        },
+        [shuffledParticipants],
     );
-  }
-}
+
+    useEffect(() => {
+        if (!randomTimeout.current) {
+            randomTimeout.current = setTimeout(() => {
+                clearInterval(shuffleInterval.current);
+                if (forcedWinner) {
+                    const finalWinner = shuffledParticipants.indexOf(forcedWinner);
+                    if (finalWinner >= 0) {
+                        setSelected(finalWinner);
+                    }
+                }
+                winnerTimeout.current = setTimeout(function () {
+                    onChangeView(nextView);
+                }, 500);
+            }, pickingWinnerDuration);
+
+            shuffleInterval.current = setInterval(function () {
+                const randomParticipant = Math.floor(Math.random() * shuffledParticipants.length);
+                setSelected(randomParticipant);
+            }, 150);
+        }
+
+        return () => {
+            clearTimeout(randomTimeout.current);
+            clearTimeout(winnerTimeout.current);
+            clearInterval(shuffleInterval.current);
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        if (winnerName) {
+            debouncedOnSelectWinner(winnerName);
+        }
+    }, [winnerName, debouncedOnSelectWinner]);
+
+    return (
+        <Container>
+            <Title>
+                <ImgSVG
+                    width="3rem"
+                    src={shuffleSpinner}
+                    padding="0 1rem"
+                />
+                {Config.text.pickingWinnerTitle}
+                <ImgSVG
+                    width="3rem"
+                    src={shuffleSpinner}
+                    padding="0 1rem"
+                />
+            </Title>
+            <P textAlign="center">{winnerName}</P>
+            <Row>
+                <Button
+                    secondary
+                    onClick={() => onChangeView(previousView)}
+                >
+                    {Config.text.cancelButton}
+                </Button>
+                <Button
+                    primary
+                    onClick={() => onChangeView(nextView)}
+                >
+                    {Config.text.finishButton}
+                </Button>
+            </Row>
+        </Container>
+    );
+};
 
 Shuffle.propTypes = {
-  getRandomTimeout: PropTypes.func,
-  forcedWinner: PropTypes.string,
-  onChangeView: PropTypes.func.isRequired,
-  nextView: PropTypes.string,
+    getRandomTimeout: PropTypes.func,
+    forcedWinner: PropTypes.string,
+    onChangeView: PropTypes.func.isRequired,
+    nextView: PropTypes.string,
 };
 
 Shuffle.defaultProps = {
-  forcedWinner: null,
-  nextView: 'winner',
-  getRandomTimeout() {
-    return Math.floor(Math.random() * 10) + 5;
-  },
+    forcedWinner: null,
+    previousView: 'setParticipants',
+    nextView: 'winner',
 };
 
 export default Shuffle;
