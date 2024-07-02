@@ -1,46 +1,46 @@
 {
-  "name": "Raffle-App",
-  "homepage": "https://iamgutz.github.io/raffle-app",
-  "author": {
-    "name": "Michael Gutierrez",
-    "url": "https://github.com/iamgutz"
-  },
-  "description": "React App Prototype for raffling",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "lodash": "^4.17.11",
-    "react": "^16.8.6",
-    "react-confetti": "^3.1.0",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "styled-components": "^4.2.0"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "NODE_PATH=src/ react-scripts start",
-    "build": "NODE_PATH=src/ react-scripts build",
-    "test": "NODE_PATH=src/ react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://iamgutz@bitbucket.org/iamgutz/raffle-app.git"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
-  }
+    "name": "raffle_app",
+    "homepage": "https://iamgutz.github.io/raffle-app",
+    "author": {
+        "name": "Michael Gutierrez",
+        "url": "https://github.com/iamgutz"
+    },
+    "description": "React App Prototype for raffling",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "lodash": "^4.17.11",
+        "react": "^16.8.6",
+        "react-confetti": "^3.1.0",
+        "react-dom": "^16.8.6",
+        "react-scripts": "3.0.1",
+        "styled-components": "^4.2.0"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "start": "NODE_PATH=src/ react-scripts start",
+        "build": "NODE_PATH=src/ react-scripts build",
+        "test": "NODE_PATH=src/ react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://iamgutz@bitbucket.org/iamgutz/raffle-app.git"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.1.1"
+    }
 }
