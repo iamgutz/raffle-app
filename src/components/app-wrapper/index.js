@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Config from 'config';
+import Config from '../../config';
 
 const AppWrapper = styled.div`
   background-color: ${Config.theme.bgColor};

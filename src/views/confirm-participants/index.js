@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/button';
-import { List, Item } from 'components/list';
-import { Row, Container } from 'components/layout';
-import { Title } from 'components/typography';
-import Config from 'config';
+import Button from '../../components/button';
+import { List, Item } from '../../components/list';
+import { Row, Container } from '../../components/layout';
+import { Title } from '../../components/typography';
+import Config from '../../config';
 import { useAppContext } from '../../App/context';
 
 const ConfirmParticipants = props => {

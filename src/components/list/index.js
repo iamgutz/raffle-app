@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Config from 'config';
+import Config from '../../config';
 
 export const List = styled.ul`
   list-style: none;

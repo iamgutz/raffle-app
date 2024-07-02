@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Config from 'config';
+import Config from '../../config';
 
-const Button = styled.button `
+const Button = styled.button`
   border: none;
   font-family: 'PT Sans', sans-serif;
   font-size: 1rem;
@@ -16,8 +16,8 @@ const Button = styled.button `
 `;
 
 Button.propTypes = {
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
+    primary: PropTypes.bool,
+    secondary: PropTypes.bool,
 };
 
 export default Button;

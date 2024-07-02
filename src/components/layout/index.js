@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DEVICE } from 'style/media-queries';
+import { DEVICE } from '../../style/media-queries';
 
 export const Main = styled.main`
   display: flex;

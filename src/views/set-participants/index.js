@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _isEmpty from 'lodash/isEmpty';
-import TextArea from 'components/text-area';
-import Button from 'components/button';
-import { Row, Container } from 'components/layout';
-import { Title } from 'components/typography';
-import Config from 'config';
+import TextArea from '../../components/text-area';
+import Button from '../../components/button';
+import { Row, Container } from '../../components/layout';
+import { Title } from '../../components/typography';
+import Config from '../../config';
 import { useAppContext } from '../../App/context';
 
 const SetParticipants = props => {

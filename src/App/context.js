@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { setInStorage, getFromStorage } from 'utils/localstorage';
+import { setInStorage, getFromStorage } from '../utils/localstorage';
 import { parseTextAreaValue } from './helpers';
 
 export const AppContext = createContext(undefined);

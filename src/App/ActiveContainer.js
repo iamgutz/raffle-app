@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VIEWS } from 'views';
+import { VIEWS } from '../views';
 import { useAppContext } from './context';
 
 const ActiveContainer = () => {

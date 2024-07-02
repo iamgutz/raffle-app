@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Confetti from 'react-confetti';
-import Button from 'components/button';
-import { SuperTitle, Headline, Title } from 'components/typography';
-import AppLogo from 'components/app-logo';
-import { clearStorage } from 'utils/localstorage';
+import Button from '../../components/button';
+import { SuperTitle, Headline, Title } from '../../components/typography';
+import AppLogo from '../../components/app-logo';
+import { clearStorage } from '../../utils/localstorage';
 import { Podium } from './styles';
-import Config from 'config';
+import Config from '../../config';
 import { useAppContext } from '../../App/context';
 
 const Winner = ({ nextView }) => {
